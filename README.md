@@ -22,8 +22,46 @@ The subsequent demonstration provides a recorded illustration of live image clas
 ### [Installing Arduino CLI](https://arduino.github.io/arduino-cli/0.32/installation/#latest-release)
 * Follow this 1 minute, detailed [insctruction video](https://www.youtube.com/watch?v=1jMWsFER-Bc) to install Arduino CLI
 
-Upon successful installation of Edge Impulse CLI and Arduino CLI, we are ready to proceed. However, prior to advancing, I would like to share some troubleshooting techniques that have helped me in resolving certain errors encountered during the installation of Edge Impulse CLI.
-### Troubleshooting Edge Impulse CLI installation
+Upon successful installation of Edge Impulse CLI and Arduino CLI, we are ready to proceed. However, prior to advancing, I would like to share some troubleshooting techniques that have helped me in resolving certain errors encountered during the installation of Edge Impulse CLI. To verify the correct installation of Edge Impulse CLI on your computer, execute the following code on the Windows command prompt:
+        
+        edge-impulse-daemon --clean
+If everything is installed properly it should ask you to enter your login details of your edge impulse account. 
+
+### Troubleshooting Edge Impulse CLI installation <a name="Troubleshoot"></a>
+In case you come across the following error message whilst installing Edge Impulse CLI, the subsequent steps can be taken to rectify the issue.
 <p align = "center">
 <img src="https://user-images.githubusercontent.com/118956460/235285637-8f734415-4e3a-4503-a5ac-c70a246b538b.png" />
 </p>
+
+1. Open a new Power Shell window with administrator access and to list available versions of nvm (node version manager) run <a name="steps"></a>
+         
+         nvm list available
+2. Then install the latest version of nvm with this code
+
+         nvm install latest
+3. After the installation run the following codes
+
+         nvm use 16.3.0
+         npm install -g edge-impulse-cli --force
+4. If the installation proceeds without any errors, everything is well and good. However, if an error occurs with regards to Visual Studio, as shown below, then the subsequent troubleshooting steps can be implemented.
+
+>...<br>
+npm ERR! gyp ERR! find VS **************************************************************<br>
+npm ERR! gyp ERR! find VS You need to install the latest version of Visual Studio<br>
+npm ERR! gyp ERR! find VS including the "Desktop development with C++" workload.<br>
+npm ERR! gyp ERR! find VS For more information consult the documentation at:<br>
+npm ERR! gyp ERR! find VS https://github.com/nodejs/node-gyp#on-windows<br>
+npm ERR! gyp ERR! find VS **************************************************************<br>
+npm ERR! gyp ERR! find VS<br>
+npm ERR! gyp ERR! configure error<br>
+npm ERR! gyp ERR! stack Error: Could not find any Visual Studio installation to use<br>
+...<br>
+
+5. Download and install `Desktop development with C++` from this link: [Visual Studio](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community)
+<p align = "center">
+<img src="https://user-images.githubusercontent.com/118956460/235292426-979919f7-2cae-4269-a75a-813a5412d9c4.png" />
+</p>
+
+6. After installing Visual Studio retry the above mentioned [steps](#steps).
+
+Follow this thread for more information on troubleshooting edge impulse cli installation: [Edge-impulse-cli install](https://forum.edgeimpulse.com/t/edge-impulse-cli-install/1293/15)
