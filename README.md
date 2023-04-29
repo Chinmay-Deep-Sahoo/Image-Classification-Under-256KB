@@ -128,10 +128,10 @@ If the model is taking more RAM than available in Arduino Nicla Vision you might
 # Running Live Classification on Arduino Nicla Vision
 After completing the previous sections successfully, you can now proceed with the following steps to perform inference on your trained model for real-world image classification using live camera input from your device.
 1. Open cmd in Windows.
-2. Run the following code to show the classification results in the command prompt. Results includes predicted probability of each class. 
+2. Run the following command to show the classification results in the command prompt. Results includes predicted probability of each class. 
          
          edge-impulse-run-impulse
-3. Run the following code to show the classification results with the live camera feed on your browser like shown [here](#live).
+3. Run the following command to show the classification results with the live camera feed on your browser like shown [here](#live).
 
          edge-impulse-run-impulse --debug
          
