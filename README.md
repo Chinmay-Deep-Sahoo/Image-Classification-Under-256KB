@@ -81,4 +81,4 @@ For gathering data, which comprises of labeled images, one can either upload ima
 1. Go to the Data acquisition tab, select Nicla Vision from the 'Device dropdown menu' and camera from the 'Sensor dropdown menu'. Once you select the camera you should see a live feed of the camera.
 2. Type the class name in the Label box, and get the object in the frame of the camera. Click on 'Start sampling' to capture an image, it will automatically be uploaded to your project with the label you mentioned before.
 
-For Video Demonstration watch this video: [Build Your Own Object Detection System with Machine Learning](https://www.youtube.com/embed/dY3OSiJyne0?start=240)
+Video Demonstration of collecting data: [Data Collection in Edge Impulse](https://www.youtube.com/embed/dY3OSiJyne0?start=240stop=250)
