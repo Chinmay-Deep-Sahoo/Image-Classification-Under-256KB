@@ -17,7 +17,6 @@ The subsequent demonstration provides a recorded illustration of live image clas
 * [Deploying Model to Nicla Vision](#deploy)
    * [Issues while deployement](#deploy-issue)
 * [Running Live Classification on Arduino Nicla Vision](#live-class)
-* [SSS](#steps)
 
 # Getting Started (Windows) <a name="gs"></a>
 ### Required Dependencies <a name = "rd"></a>
