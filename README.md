@@ -5,26 +5,26 @@ The subsequent demonstration provides a recorded illustration of live image clas
 </p>
 
 # Table of Contents
-* [Getting Started](#GS)
-   * [Required Dependencies](#RD)
-   * [Installing Edge Impulse CLI](#ECLI)
-   * [Installing Arduino CLI](#ACLI)
-   * [Troubleshooting Edge Impulse CLI installation](#Troubleshoot)
-* [Connecting Nicla Vision to Edge Impulse (Windows)](#Connect)
-* [Collecting Data](#Collect)
-* [Building Machine Learning Model](#Model)
-* [Model Selection through EON Tuner](#EON)
-* [Deploying Model to Nicla Vision](#Deploy)
+* [Getting Started](#gs)
+   * [Required Dependencies](#rd)
+   * [Installing Edge Impulse CLI](#ecli)
+   * [Installing Arduino CLI](#acli)
+   * [Troubleshooting Edge Impulse CLI installation](#troubleshoot)
+* [Connecting Nicla Vision to Edge Impulse (Windows)](#connect)
+* [Collecting Data](#collect)
+* [Building Machine Learning Model](#model)
+* [Model Selection through EON Tuner](#eon)
+* [Deploying Model to Nicla Vision](#deploy)
    * [Issues while deployement](#deploy-issue)
-* [Running Live Classification on Arduino Nicla Vision](#live)
+* [Running Live Classification on Arduino Nicla Vision](#live-class)
 * [SSS](#steps)
 
-# Getting Started (Windows) <a name="GS"></a>
-### Required Dependencies <a name = "RD"></a>
+# Getting Started (Windows) <a name="gs"></a>
+### Required Dependencies <a name = "rd"></a>
 * Edge Impulse CLI
 * Arduino CLI
 
-### [Installing Edge Impulse CLI](https://docs.edgeimpulse.com/docs/edge-impulse-cli/cli-installation#installation-windows)<a name = "ECLI"></a>
+### [Installing Edge Impulse CLI](https://docs.edgeimpulse.com/docs/edge-impulse-cli/cli-installation#installation-windows)<a name = "ecli"></a>
 1. Start by creating an [Edge Impulse account](https://studio.edgeimpulse.com/signup).
 2. Install [Python 3](https://www.python.org).
 3. Install [Node.js](https://nodejs.org/en) v14 or higher.
@@ -34,7 +34,7 @@ The subsequent demonstration provides a recorded illustration of live image clas
         
         npm install -g edge-impulse-cli --force
 
-### [Installing Arduino CLI](https://arduino.github.io/arduino-cli/0.32/installation/#latest-release)<a name = "ACLI"></a>
+### [Installing Arduino CLI](https://arduino.github.io/arduino-cli/0.32/installation/#latest-release)<a name = "acli"></a>
 * Follow this 1 minute, detailed [insctruction video](https://www.youtube.com/watch?v=1jMWsFER-Bc) to install Arduino CLI
 
 Upon successful installation of Edge Impulse CLI and Arduino CLI, we are ready to proceed. However, prior to advancing, I would like to share some troubleshooting techniques that have helped me in resolving certain errors encountered during the installation of Edge Impulse CLI. To verify the correct installation of Edge Impulse CLI on your computer, execute the following code on the Windows command prompt:
@@ -42,7 +42,7 @@ Upon successful installation of Edge Impulse CLI and Arduino CLI, we are ready t
         edge-impulse-daemon --clean
 If everything is installed properly it should ask you to enter your login details of your edge impulse account. 
 
-### Troubleshooting Edge Impulse CLI installation <a name="Troubleshoot"></a>
+### Troubleshooting Edge Impulse CLI installation <a name="troubleshoot"></a>
 In case you come across the following error message whilst installing Edge Impulse CLI, the subsequent steps can be taken to rectify the issue.
 <p align = "center">
 <img src="https://user-images.githubusercontent.com/118956460/235285637-8f734415-4e3a-4503-a5ac-c70a246b538b.png" />
@@ -80,7 +80,7 @@ npm ERR! gyp ERR! stack Error: Could not find any Visual Studio installation to 
 
 Follow this thread for more information on troubleshooting edge impulse cli installation: [Edge-impulse-cli install](https://forum.edgeimpulse.com/t/edge-impulse-cli-install/1293/15)
 
-# Connecting Nicla Vision to Edge Impulse (Windows)<a name = "Connect"></a>
+# Connecting Nicla Vision to Edge Impulse (Windows)<a name = "connect"></a>
 
 1. Download the [latest edge impulse firmware](https://cdn.edgeimpulse.com/firmware/arduino-nicla-vision-firmware.zip) and extract the zip file.
 2. Connect Arduino Nicla Vision to your PC with a micro-USB cable and press the reset button twice to enter the bootloader indicated by flashing green LED on Nicla Vision.
@@ -91,14 +91,14 @@ Follow this thread for more information on troubleshooting edge impulse cli inst
    <img src="https://user-images.githubusercontent.com/118956460/235293796-994913cf-3459-4124-825a-860c434ccf16.png" />
 </p>
 
-# Collecting Data<a name = "Collect"></a>
+# Collecting Data<a name = "collect"></a>
 For gathering data, which comprises of labeled images, one can either upload images onto Edge Impulse directly or collect data from Arduino Nicla Vision. Here, the steps for collecting data from Nicla Vision will be outlined, as uploading data is a straighforward process.
 1. Go to the Data acquisition tab, select Nicla Vision from the 'Device dropdown menu' and camera from the 'Sensor dropdown menu'. Once you select the camera you should see a live feed of the camera.
 2. Type the class name in the Label box, and get the object in the frame of the camera. Click on 'Start sampling' to capture an image, it will automatically be uploaded to your project with the label you mentioned before.
 
 Video Demonstration of collecting data: [Data Collection in Edge Impulse](https://www.youtube.com/embed/dY3OSiJyne0?start=240)
 
-# Building Machine Learning Model<a name = "Model"></a>
+# Building Machine Learning Model<a name = "model"></a>
 This section will detail the steps involved in designing the machine learning architecture which will be utilized for training on the collected data. One may either construct and train their own custom model or opt to use pre-trained models provided by Edge Impulse, which can be utilized for transfer learning and fitting our dataset. The subsequent steps are tailored towards transfer learning.
 1. Go to the 'Create impulse' tab under 'Impulse design' and select input image width and height in the 'Image data' block.
 <p align = "center">
@@ -117,7 +117,7 @@ This section will detail the steps involved in designing the machine learning ar
 
 Video Demonstration of Building Model: [Build Model](https://www.youtube.com/embed/dY3OSiJyne0?start=529)
 
-# Model Selection through EON Tuner<a name = "EON"></a>
+# Model Selection through EON Tuner<a name = "eon"></a>
 An alternative method of designing a model involves searching for the optimal model which can accommodate the resource constraints of the Arduino Nicla Vision. EON Tuner offers an AutoML feature which enables the discovery of the optimal model to enhance the accuracy of our image classification task. The following section will detail the steps required to identify the optimal model.
 1. Go to the 'EON Tuner' tab and select your target device i.e Nicla Vision, then select your acceptable latency and click on 'Start EON tuner'.
 2. Once the search process is finished, a list of different models along with their respective accuracy, latency, RAM, and ROM usage will be displayed as illustrated in the following image.
@@ -127,7 +127,7 @@ An alternative method of designing a model involves searching for the optimal mo
 
 3. Find the model which fits the RAM and ROM requirements with the best accuracy and train that model again in the 'Classifier' tab.
 
-# Deploying Model to Nicla Vision<a name = "Deploy"></a>
+# Deploying Model to Nicla Vision<a name = "deploy"></a>
 Deploying the trained weights to our device is a simple process in Edge Impulse, which can be done in just three easy steps. Once the model is trained and finalized, follow the steps below to deploy it to the device.
 1. Go to the 'Deployment' tab and scroll down to the 'Build firmware' section.
 <p align = "center">
@@ -140,7 +140,7 @@ Deploying the trained weights to our device is a simple process in Edge Impulse,
 ### Issues while deployement<a name = "deploy-issue"></a>
 If the model is taking more RAM than available in Arduino Nicla Vision you might get an error while building the firmware in edge impulse. To resolve this issue, you can either train a smaller model or use the EON Tuner feature as described earlier to search for an optimal model that satisfies the device's resource constraints while maximizing accuracy.
 
-# Running Live Classification on Arduino Nicla Vision<a name = "live"></a>
+# Running Live Classification on Arduino Nicla Vision<a name = "live-class"></a>
 After completing the previous sections successfully, you can now proceed with the following steps to perform inference on your trained model for real-world image classification using live camera input from your device.
 1. Open cmd in Windows.
 2. Run the following command to show the classification results in the command prompt. Results includes predicted probability of each class. 
