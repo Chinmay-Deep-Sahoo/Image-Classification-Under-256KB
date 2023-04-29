@@ -131,7 +131,7 @@ After completing the previous sections successfully, you can now proceed with th
 2. Run the following command to show the classification results in the command prompt. Results includes predicted probability of each class. 
          
          edge-impulse-run-impulse
-3. Run the following command to show the classification results with the live camera feed on your browser like shown [here](#live).
+3. Run the following command to show the classification results with the live camera feed on your browser like shown [here](#live). This command will give you a web url which you can open to see the live calssification results.
 
          edge-impulse-run-impulse --debug
          
