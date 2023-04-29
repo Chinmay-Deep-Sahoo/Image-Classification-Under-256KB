@@ -148,3 +148,4 @@ After completing the previous sections successfully, you can now proceed with th
 * [Deploying Model to Nicla Vision](#Deploy)
    * [Issues while deployement](#deploy-issue)
 * [Running Live Classification on Arduino Nicla Vision](#live)
+* [SSS](#steps)
