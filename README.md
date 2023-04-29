@@ -44,7 +44,6 @@ In case you come across the following error message whilst installing Edge Impul
          nvm use 16.3.0
          npm install -g edge-impulse-cli --force
 4. If the installation proceeds without any errors, everything is well and good. However, if an error occurs with regards to Visual Studio, as shown below, then the subsequent troubleshooting steps can be implemented.
-
 >...<br>
 npm ERR! gyp ERR! find VS **************************************************************<br>
 npm ERR! gyp ERR! find VS You need to install the latest version of Visual Studio<br>
@@ -65,3 +64,21 @@ npm ERR! gyp ERR! stack Error: Could not find any Visual Studio installation to 
 6. After installing Visual Studio retry the above mentioned [steps](#steps).
 
 Follow this thread for more information on troubleshooting edge impulse cli installation: [Edge-impulse-cli install](https://forum.edgeimpulse.com/t/edge-impulse-cli-install/1293/15)
+
+# Connecting Nicla Vision to Edge Impulse (Windows)
+
+1. Download the [latest edge impulse firmware](https://cdn.edgeimpulse.com/firmware/arduino-nicla-vision-firmware.zip) and extract the zip file.
+2. Connect Arduino Nicla Vision to your PC with a micro-USB cable and press the reset button twice to enter the bootloader indicated by flashing green LED on Nicla Vision.
+3. Open the file named `flash_windows.bat` from the unziped files, and let the flash script run, once it is finished blue LED should turn on in your Arduino Nicla Vision.
+4. Then run this command on a new cmd prompt `edge-impulse-daemon` and log in to your edge impulse account. Then select the project you want Arduino Nicla Vision to connect. `edge-impulse-daemon --clean` can be run if you want to re-login to edge impulse or select a different project to connect your Nicla Vision.
+5. Open your edge impulse project in your browser, you should be able to see Arduino Nicla vision in your Devices tab.
+<p align = "center">
+   <img src="https://user-images.githubusercontent.com/118956460/235293796-994913cf-3459-4124-825a-860c434ccf16.png" />
+</p>
+
+# Collecting Data
+For gathering data, which comprises of labeled images, one can either upload images onto Edge Impulse directly or collect data from Arduino Nicla Vision. Here, the steps for collecting data from Nicla Vision will be outlined, as uploading data is a straighforward process.
+1. Go to the Data acquisition tab, select Nicla Vision from the 'Device dropdown menu' and camera from the 'Sensor dropdown menu'. Once you select the camera you should see a live feed of the camera.
+2. Type the class name in the Label box, and get the object in the frame of the camera. Click on 'Start sampling' to capture an image, it will automatically be uploaded to your project with the label you mentioned before.
+
+For Video Demonstration watch this video: [Build Your Own Object Detection System with Machine Learning](https://www.youtube.com/embed/dY3OSiJyne0?start=240)
