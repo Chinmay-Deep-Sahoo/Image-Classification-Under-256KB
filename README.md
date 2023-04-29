@@ -4,20 +4,6 @@ The subsequent demonstration provides a recorded illustration of live image clas
 <img src="https://user-images.githubusercontent.com/118956460/235283716-c6f0db76-2d03-4890-ad68-d6d1c4e0af46.gif" width="300" height="353" />
 </p>
 
-# Table of Contents
-* [Getting Started](#GS)
-   * [Required Dependencies](#RD)
-   * [Installing Edge Impulse CLI](#ECLI)
-   * [Installing Arduino CLI](#ACLI)
-   * [Troubleshooting Edge Impulse CLI installation](#Troubleshoot)
-* [Connecting Nicla Vision to Edge Impulse (Windows)](#Connect)
-* [Collecting Data](#Collect)
-* [Building Machine Learning Model](#Model)
-* [Model Selection through EON Tuner](#EON)
-* [Deploying Model to Nicla Vision](#Deploy)
-   * [Issues while deployement](#deploy-issue)
-* [Running Live Classification on Arduino Nicla Vision](#live)
-
 # Getting Started (Windows) <a name="GS"></a>
 ### Required Dependencies <a name = "RD"></a>
 * Edge Impulse CLI
@@ -149,3 +135,16 @@ After completing the previous sections successfully, you can now proceed with th
 
          edge-impulse-run-impulse --debug
          
+# Table of Contents
+* [Getting Started](#GS)
+   * [Required Dependencies](#RD)
+   * [Installing Edge Impulse CLI](#ECLI)
+   * [Installing Arduino CLI](#ACLI)
+   * [Troubleshooting Edge Impulse CLI installation](#Troubleshoot)
+* [Connecting Nicla Vision to Edge Impulse (Windows)](#Connect)
+* [Collecting Data](#Collect)
+* [Building Machine Learning Model](#Model)
+* [Model Selection through EON Tuner](#EON)
+* [Deploying Model to Nicla Vision](#Deploy)
+   * [Issues while deployement](#deploy-issue)
+* [Running Live Classification on Arduino Nicla Vision](#live)
