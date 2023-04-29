@@ -1,6 +1,6 @@
-# Illustration of Image Classification
+# Illustration of Image Classification<a name="live"></a>
 The subsequent demonstration provides a recorded illustration of live image classification that has been executed on the Arduino Nicla Vision. The Nicla Vision's inbuilt camera is utilized to capture live images, following which the CNN model predicts the class of the image, along with its corresponding probability and inference time. It is to be note that the CNN model's computations are performed on the Arduino device, despite its resource constraints.
-<p align="center"><a name="live"></a>
+<p align="center">
 <img src="https://user-images.githubusercontent.com/118956460/235283716-c6f0db76-2d03-4890-ad68-d6d1c4e0af46.gif" width="300" height="353" />
 </p>
 
